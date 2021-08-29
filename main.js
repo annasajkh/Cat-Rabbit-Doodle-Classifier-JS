@@ -11,7 +11,6 @@ function mouseDragged() {
 }
 
 function mouseReleased() {
-    get
     erase()
     rect(0,0,130,40)
     noErase()
