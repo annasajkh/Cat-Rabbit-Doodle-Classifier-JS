@@ -1,6 +1,6 @@
 
 function setup() {
-    createCanvas(500, 500);
+    createCanvas(1000, 1000);
     border();
     background(255);
     document.addEventListener('touchmove', function() { e.preventDefault(); }, { passive:false });
