@@ -27,7 +27,7 @@ function mouseReleased() {
     let string = ""
 
     for(let i = 0; i < 28 * 28; i++) {
-        string += ((255 - img_pixel[i * 4]) / 255)
+        string += 1 - (img_pixel[i * 4] / 255)
         
         if (i < 28 * 28 - 1) {
             string += ","
