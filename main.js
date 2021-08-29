@@ -1,3 +1,5 @@
+
+
 function setup() {
     createCanvas(500, 500);
     border();
@@ -6,12 +8,6 @@ function setup() {
 
 function mouseDragged() {
     line(mouseX, mouseY,pmouseX, pmouseY);
-}
-
-function keyPressed() {
-    if (keyCode == 32) {
-        background(255);
-    }
 }
 
 function mouseReleased() {
@@ -30,7 +26,7 @@ function mouseReleased() {
     for(let i = 0; i < 28 * 28; i++) {
         string += 1 - (img_pixel[i * 4] / 255)
         
-        if (i < 28 * 28 - 1) {
+        if(i < 28 * 28 - 1) {
             string += ","
         }
     }
@@ -51,6 +47,10 @@ function mouseReleased() {
     }
 
 
+}
+
+function clear_screen() {
+    background(255);
 }
 
 function draw() {
