@@ -1,5 +1,9 @@
 function setup() {
-    createCanvas(500, 500);
+    let canvas  = createCanvas(500, 500);
+    canvas.addEventListener("touchstart",  function(event) {event.preventDefault()})
+    canvas.addEventListener("touchmove",   function(event) {event.preventDefault()})
+    canvas.addEventListener("touchend",    function(event) {event.preventDefault()})
+    canvas.addEventListener("touchcancel", function(event) {event.preventDefault()})
     border();
     background(255);
 }
@@ -15,6 +19,7 @@ function keyPressed() {
 }
 
 function mouseReleased() {
+    get
     erase()
     rect(0,0,130,40)
     noErase()
