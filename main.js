@@ -1,9 +1,5 @@
 function setup() {
-    let canvas  = createCanvas(500, 500);
-    canvas.addEventListener("touchstart",  function(event) {event.preventDefault()})
-    canvas.addEventListener("touchmove",   function(event) {event.preventDefault()})
-    canvas.addEventListener("touchend",    function(event) {event.preventDefault()})
-    canvas.addEventListener("touchcancel", function(event) {event.preventDefault()})
+    createCanvas(500, 500);
     border();
     background(255);
 }
