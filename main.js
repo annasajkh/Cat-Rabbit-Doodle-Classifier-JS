@@ -11,19 +11,17 @@ function mouseDragged() {
 }
 
 function mouseReleased() {
-    erase()
-    rect(0,0,130,40)
-    noErase()
-
+    strokeWeight(0)
+    rect(0,0,500,40)
     let img = get();
     img.resize(28, 28)
+    img.filter(INVERT)
+    image(img, 500 - 28 ,0)
     img.loadPixels()
-
-    let img_pixel = Array.from(img.pixels)
     let string = ""
 
     for(let i = 0; i < 28 * 28; i++) {
-        string += (255 - img_pixel[i * 4]) / 255
+        string += img.pixels[i * 4] / 255   
         
         if(i < 28 * 28 - 1) {
             string += ","
@@ -35,10 +33,9 @@ function mouseReleased() {
 
     xhr.send(JSON.stringify({"img_str": string}));
 
+    
+
     xhr.onload = () => {
-        erase()
-        rect(0,0,130,40)
-        noErase()
         let result = JSON.parse(xhr.responseText);
         textSize(20)
         text("cat: " + result["cat"], 10, 20)
@@ -53,5 +50,5 @@ function clear_screen() {
 }
 
 function draw() {
-    strokeWeight(10);
+    strokeWeight(15);
 }
